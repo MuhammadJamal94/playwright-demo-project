@@ -4,7 +4,7 @@ import {customTest} from "../utils_ts/test-base"
 const testData = JSON.parse(JSON.stringify(require('../utils/placeOrderTestData.json')));
 
 for (const data of testData) {
-    customTest.only(`pom e2e ${data.productName}`, async ({ browser }) => {
+    customTest(`pom e2e ${data.productName}`, async ({ browser }) => {
         const context = await browser.newContext();
         const page = await context.newPage();
         const poManager = new POManager(page);

@@ -3,7 +3,7 @@ const { POManager } = require('../pageobjects/POManager');
 const testData = JSON.parse(JSON.stringify(require('../utils/placeOrderTestData.json')));
 
 for (const data of testData) {
-    test.only(`pom e2e ${data.productName}`, async ({ browser }) => {
+    test(`pom e2e ${data.productName}`, async ({ browser }) => {
         const context = await browser.newContext();
         const page = await context.newPage();
         const poManager = new POManager(page);
